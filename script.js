@@ -1,7 +1,10 @@
 let lowerCase = 'abcdefghijklmnopqrstuvqxyz';
 let upperCase = lowerCase.toUpperCase();
 let nums = '0123456789';
-let chars = lowerCase.split('').concat(upperCase.split(''), nums.split(''));
+let specialChars = '!@#$%^&*()';
+let chars = lowerCase.split('').concat(upperCase.split(''),
+nums.split(''),
+specialChars.split(''));
 
 const generateEl = document.getElementById('generate');
 generateEl.addEventListener('click', populatePasswords);
@@ -28,5 +31,11 @@ function randomInt(m, n) {
 function populatePasswords() {
 	for (let el of passwordButtons) {
 		el.textContent = generatePassword();
+		el.addEventListener('click', copyText);
+		el.title  = 'click to copy';
 	}
+}
+
+function copyText(el) {
+	navigator.clipboard.writeText(el.target.textContent);
 }

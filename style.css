@@ -70,4 +70,8 @@ button:active {
 .passwords button {
 	background-color: #273549;
 	color: #10B981;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: default;
 }
