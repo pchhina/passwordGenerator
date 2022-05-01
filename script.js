@@ -17,7 +17,7 @@ let passwordButtons = [pass1El, pass2El, pass3El, pass4El];
 
 function generatePassword() {
 	password = '';
-	for (let i = 0; i < 10; i++) {
+	for (let i = 0; i < lengthEl.value; i++) {
 		password += chars[randomInt(0, chars.length - 1)];
 	}
 	return password;
@@ -38,4 +38,23 @@ function populatePasswords() {
 
 function copyText(el) {
 	navigator.clipboard.writeText(el.target.textContent);
+}
+
+let lengthEl = document.getElementById('length');
+let decEl = document.getElementById('dec');
+let incEl = document.getElementById('inc');
+
+decEl.addEventListener('click', decrement);
+incEl.addEventListener('click', increment);
+
+function decrement() {
+	currentVal = lengthEl.value;
+	currentVal--;
+	lengthEl.value = currentVal;
+}
+
+function increment() {
+	currentVal = lengthEl.value;
+	currentVal++;
+	lengthEl.value = currentVal;
 }

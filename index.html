@@ -9,14 +9,25 @@
 			<div class="main">
 				<h1>Generate a<br><span class="title-2">random password</span></h1>
 				<p>Never use an insecure password again.</p>
-				<button id="generate"><span class="button-icon"> <ion-icon name="flash"></ion-icon></span>
+				<div class="inputs">
+					<button id="generate" class="btn-main"><span class="button-icon"> <ion-icon name="flash"></ion-icon></span>
 					<span class="button-text">Generate passwords</span> </button>
+					<div class="pwd-length">
+						<label>Password Length</label>
+						<div class="input-ctl">
+							<button class="ctl" id="dec"><ion-icon name="remove-circle"></ion-icon></button>
+							<input id="length" minlength="1" maxlength="2" value="8">
+							<button class="ctl" id="inc"><ion-icon name="add-circle"></ion-icon> </button>
+						</div>
+					</div>
+				</div>
 			</div>
+
 			<div class="passwords">
-				<button id="pass-1"></button>
-				<button id="pass-2"></button>
-				<button id="pass-3"></button>
-				<button id="pass-4"></button>
+				<button id="pass-1" class="btn-main"></button>
+				<button id="pass-2" class="btn-main"></button>
+				<button id="pass-3" class="btn-main"></button>
+				<button id="pass-4" class="btn-main"></button>
 			</div>
 
 		</div>
