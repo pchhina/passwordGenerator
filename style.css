@@ -20,6 +20,8 @@ body {
 .main {
 	border-bottom: 1px solid #273549;
 	color: white;
+	width: 460px;
+	height: 240px;
 }
 
 h1 {
@@ -71,6 +73,10 @@ button:active {
 	display: inline-flex;
 	align-items: center;
 	padding: 0 5px;
+}
+
+.passwords {
+	margin-top: 20px;
 }
 
 .passwords button {

@@ -44,17 +44,33 @@ let lengthEl = document.getElementById('length');
 let decEl = document.getElementById('dec');
 let incEl = document.getElementById('inc');
 
-decEl.addEventListener('click', decrement);
+decEl.addEventListener('mousedown', decrement);
 incEl.addEventListener('click', increment);
+lengthEl.addEventListener('change', validate);
 
 function decrement() {
 	currentVal = lengthEl.value;
-	currentVal--;
+	if (currentVal > 8) {
+		currentVal--;
+	}
 	lengthEl.value = currentVal;
 }
 
 function increment() {
 	currentVal = lengthEl.value;
-	currentVal++;
+	if (currentVal < 16) {
+		currentVal++;
+	}
+	lengthEl.value = currentVal;
+}
+
+function validate() {
+	currentVal = lengthEl.value;
+	if (currentVal < 8) {
+		currentVal = 8;
+	}
+	if (currentVal > 16) {
+		currentVal = 16;
+	}
 	lengthEl.value = currentVal;
 }
